@@ -1,2 +1,2 @@
-# cst3106_labs
+# cst3106_lab2
 MY LABS
