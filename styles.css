@@ -1,8 +1,7 @@
 body {
     font-size: 100%;
     margin: 0;
-    padding: 20px;
-    text-align: center;
+    padding: 20px
 }
 
 h1 {
@@ -17,7 +16,7 @@ h2 {
 
 h3 {
     font-size: 1.2rem;
-    color:#2c3e50
+    color: #2c3e50;
 }
 
 p, li {
