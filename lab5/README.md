@@ -67,8 +67,10 @@ The colors match my portfolio website, so the game feels like part of the same s
 
 | Use | Font | Size |
 | --- | ---- | ---- |
-| Headings (h1, h2) | Georgia (serif) | 36px / 28px |
-| Subheadings and labels | Source Sans 3, bold | 13–18px |
+| Page title (h1) | Georgia (serif) | 36px |
+| Section headings (h2) | Georgia (serif) | 28px |
+| Section labels (e.g. UPPER SECTION) | Source Sans 3, bold | 13px |
+| Messages and Roll button | Source Sans 3, bold | 18–19px |
 | Body text | Source Sans 3 | 17px |
 
 **Why these fonts:** Georgia matches the serif headings on my portfolio and gives the game a classic board-game feel. Source Sans 3 is clean and easy to read at small sizes, which matters for the scorecard numbers. Georgia is built into every computer, and Source Sans 3 loads from Google Fonts.
@@ -77,7 +79,7 @@ All colors and fonts are defined as CSS variables at the top of `style.css`, so 
 
 ## Dice Design
 
-[ADD SCREENSHOT OF THE DICE HERE]
+![Dice design](screenshots/dice.png)
 
 - **Size:** 88 × 88px with rounded corners (14px). On phones they shrink to 64 × 64px.
 - **Color:** white face, light grey border, navy pips.
@@ -88,9 +90,13 @@ All colors and fonts are defined as CSS variables at the top of `style.css`, so 
 
 ## Mockups
 
-[ADD SCREENSHOT OF mockup.html ON DESKTOP HERE]
+### Desktop
 
-[ADD SCREENSHOT OF mockup.html ON A PHONE HERE]
+![Desktop mockup](screenshots/desktop.png)
+
+### Mobile
+
+<img src="screenshots/mobile.png" alt="Mobile mockup" width="320">
 
 The mockup is in [`mockup.html`](mockup.html) with styles in [`style.css`](style.css). It shows a turn in progress: the player rolled 5-5-5-2-6 and is holding the three fives.
 
@@ -105,10 +111,18 @@ The page has four parts:
 
 On desktop, the game board and scorecard sit side by side. On phones, the scorecard stacks below the game board. This uses flexbox with `flex-wrap`, so no separate mobile page is needed.
 
-```
-Start turn → Roll all dice → Hold some dice → Reroll (up to 2 times)
-          → Pick a scorecard box → Next turn
-          → After 15 turns: show final score
+```mermaid
+flowchart TD
+    A[Start turn] --> B[Roll all 5 dice]
+    B --> C[Hold some dice]
+    C --> D{Rolls left?}
+    D -- Yes --> E[Reroll unheld dice]
+    E --> C
+    D -- No --> F[Pick a scorecard box]
+    C -. or pick early .-> F
+    F --> G{15 turns done?}
+    G -- No --> A
+    G -- Yes --> H[Show final score]
 ```
 
 ## Planned Interactions and Animations
