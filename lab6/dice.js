@@ -1,6 +1,7 @@
 /**
  * Dice module (CST3106 Lab 6)
  * Handles rolling the dice for the Yatzy game.
+ * Skeleton version: structure and intended behaviour only.
  */
 class Dice {
   /**
@@ -9,7 +10,7 @@ class Dice {
    */
   constructor(count) {
     this.count = count;  // how many dice are in this set
-    this.values = [];    // what each die shows after a roll (empty until the first roll)
+    this.values = [];    // the current value of each die (filled in when the dice are rolled)
   }
 
   /**
@@ -18,17 +19,5 @@ class Dice {
    */
   roll() {
     return Math.floor(Math.random() * 6) + 1;
-  }
-
-  /**
-   * Rolls every die in the set and remembers the results.
-   * @returns {number[]} The new values, for example [3, 6, 1, 6, 2].
-   */
-  rollAll() {
-    this.values = [];  // clear the last roll so old dice don't pile up
-    for (let i = 0; i < this.count; i++) {
-      this.values.push(this.roll());  // roll one die and add it to the list
-    }
-    return this.values;
   }
 }
