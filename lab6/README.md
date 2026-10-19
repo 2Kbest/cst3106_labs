@@ -39,4 +39,5 @@ from the page.
 Open `index.html` in a browser, open the console (F12), and try:
 
     const dice = new Dice(5);
-    dice.roll();
+    dice.rollAll();
+    dice.values;
