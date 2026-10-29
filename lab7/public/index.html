@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab 7: Yatzy Dice</title>
+  <style>
+    .dice { display: flex; gap: 10px; margin: 16px 0; }
+    .die {
+      width: 60px; height: 60px;
+      border: 2px solid #1F4E8C; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px; font-weight: bold;
+    }
+    #message { color: #b00020; }
+  </style>
+</head>
+<body>
+  <h1>Lab 7: Yatzy Dice</h1>
+  <button id="roll-button">Roll Dice</button>
+
+  <!-- The five dice -->
+  <div class="dice">
+    <div class="die" id="die-0">?</div>
+    <div class="die" id="die-1">?</div>
+    <div class="die" id="die-2">?</div>
+    <div class="die" id="die-3">?</div>
+    <div class="die" id="die-4">?</div>
+  </div>
+
+  <!-- Error messages show here -->
+  <p id="message"></p>
+
+  <script src="dice.js"></script>
+</body>
+</html>
