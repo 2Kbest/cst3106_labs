@@ -43,6 +43,7 @@ class YatzyEngine {
    * @returns {number} The score for that category.
    */
   calculateScore(category, diceValues) {
+    //looks at a category and the dice values and returns the score for that category.
     // TODO: implement the scoring rules above (Assignment 1)
     return 0;
   }
