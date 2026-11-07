@@ -1,0 +1,67 @@
+/* Lab 8: page and dice styles */
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 40px;
+}
+
+/* The die: a white rounded square, split into a 3x3 grid of spots */
+.die {
+  width: 100px;
+  height: 100px;
+  margin: 30px auto;
+  padding: 12px;
+  border: 3px solid #1f4e8c;
+  border-radius: 16px;
+  background: #fff;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+/* One dot */
+.pip {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #1f4e8c;
+  align-self: center;
+  justify-self: center;
+}
+
+/* Where each dot sits on the grid: row / column */
+.top-left     { grid-area: 1 / 1; }
+.top-right    { grid-area: 1 / 3; }
+.middle-left  { grid-area: 2 / 1; }
+.center       { grid-area: 2 / 2; }
+.middle-right { grid-area: 2 / 3; }
+.bottom-left  { grid-area: 3 / 1; }
+.bottom-right { grid-area: 3 / 3; }
+
+/* The Roll button */
+#roll-button {
+  padding: 10px 24px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 8px;
+  background: #1f4e8c;
+  color: #fff;
+  cursor: pointer;
+}
+/* The spin: while the die has the "rolling" class, it turns twice and grows a little */
+.die.rolling {
+  animation: roll 0.8s ease-out;
+}
+
+@keyframes roll {
+  0%   { transform: rotate(0deg) scale(1); }
+  50%  { transform: rotate(360deg) scale(1.2); }
+  100% { transform: rotate(720deg) scale(1); }
+}
+
+/* Grey out the button while the die is rolling */
+#roll-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

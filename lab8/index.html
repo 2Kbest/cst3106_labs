@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 8: Dice Roll Animation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Lab 8: Dice Roll Animation</h1>
+
+  <!-- The die. It starts showing 6 dots (handout step 2).
+       Each dot is a span; its class puts it in a spot on a 3x3 grid. -->
+  <div class="die" id="die">
+    <span class="pip top-left"></span>
+    <span class="pip top-right"></span>
+    <span class="pip middle-left"></span>
+    <span class="pip middle-right"></span>
+    <span class="pip bottom-left"></span>
+    <span class="pip bottom-right"></span>
+  </div>
+
+  <!-- The button that starts the roll (handout step 4) -->
+  <button id="roll-button">Roll Die</button>
+
+  <!-- jQuery library from the CDN (handout step 1) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
