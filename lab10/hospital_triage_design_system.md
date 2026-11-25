@@ -361,3 +361,4 @@ This design is for a class version of the app. A version used in a real emergenc
 - **A confirmation before removing a patient.** "Remove from triage" would first ask staff to confirm, to prevent mistakes.
 - **An audit trail.** The app would record who changed an entry's attention level, and when.
 - **The nurse decides.** The patient's pain score is information, not a diagnosis. The triage nurse would always set the final priority.
+- **Patient identification:** link each entry number to the patient's health card at registration so staff can confirm who is who. Names stay off the Admin screen for privacy.
